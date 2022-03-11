@@ -14,7 +14,7 @@ https://stevenmortimer.com/5-steps-to-change-github-default-branch-from-master-t
   1. Step 1 - Create the 'main' branch
   2. Step 2 - Push 'main' to remote repo
   3. Step 3 - Point HEAD to 'main' branch
-  4. Step 4 - Change default branch to 'main' on GitHub site
+  4. Step 4 - Change default branch to 'main' on the remote repo site
   5. Step 5 - Delete 'master' branch on the remote repo
 
 **Code**
@@ -35,6 +35,11 @@ git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
 # Step 4
 # change the default branch on GitHub to main
 # https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch
+#
+# change the default branch on a remote repo accessed by SSH
+ssh <to host storing your remote repo>
+cd <to repo directory>
+git symbolic-ref HEAD refs/heads/main
 
 # Step 5
 # delete the master branch on the remote
